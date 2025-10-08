@@ -1,0 +1,209 @@
+{
+  "info": {
+    "name": "Reachinbox Email Onebox API",
+    "description": "API collection for testing all email onebox features",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/health",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "Search All Emails",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/emails/search",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "emails", "search"]
+        }
+      }
+    },
+    {
+      "name": "Search with Query",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/emails/search?q=meeting&size=10",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "emails", "search"],
+          "query": [
+            {"key": "q", "value": "meeting"},
+            {"key": "size", "value": "10"}
+          ]
+        }
+      }
+    },
+    {
+      "name": "Filter by Category - Interested",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/emails/search?category=Interested",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "emails", "search"],
+          "query": [
+            {"key": "category", "value": "Interested"}
+          ]
+        }
+      }
+    },
+    {
+      "name": "Filter by Account",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/emails/search?accountId=account_1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "emails", "search"],
+          "query": [
+            {"key": "accountId", "value": "account_1"}
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Email by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/emails/:emailId",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "emails", ":emailId"],
+          "variable": [
+            {
+              "key": "emailId",
+              "value": "account_1_12345"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Email Category",
+      "request": {
+        "method": "PATCH",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"category\": \"Interested\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/emails/:emailId/category",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "emails", ":emailId", "category"],
+          "variable": [
+            {
+              "key": "emailId",
+              "value": "account_1_12345"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Generate AI Reply",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/emails/:emailId/reply",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "emails", ":emailId", "reply"],
+          "variable": [
+            {
+              "key": "emailId",
+              "value": "account_1_12345"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Connection Status",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/emails/status/connections",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "emails", "status", "connections"]
+        }
+      }
+    },
+    {
+      "name": "Get Email Statistics",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/emails/stats/overview",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "emails", "stats", "overview"]
+        }
+      }
+    },
+    {
+      "name": "Add Custom Context",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"context\": \"Additional product information: Our product helps developers build email automation systems.\",\n  \"metadata\": {\n    \"type\": \"product_info\"\n  }\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/emails/context/add",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "emails", "context", "add"]
+        }
+      }
+    }
+  ]
+}
