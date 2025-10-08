@@ -13,6 +13,7 @@ export const config = {
 
   qdrant: {
     url: process.env.QDRANT_URL || 'http://localhost:6333',
+    apiKey: process.env.QDRANT_API_KEY || '',
     collection: 'email_contexts'
   },
 

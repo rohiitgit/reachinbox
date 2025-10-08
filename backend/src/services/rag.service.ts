@@ -15,7 +15,12 @@ export class RagService {
   private collectionName: string;
 
   constructor() {
-    this.qdrant = new QdrantClient({ url: config.qdrant.url });
+    // Configure Qdrant client with API key for cloud deployments
+    const qdrantConfig: any = { url: config.qdrant.url };
+    if (config.qdrant.apiKey) {
+      qdrantConfig.apiKey = config.qdrant.apiKey;
+    }
+    this.qdrant = new QdrantClient(qdrantConfig);
     this.genAI = new GoogleGenerativeAI(config.gemini.apiKey);
     this.model = this.genAI.getGenerativeModel({ model: 'gemini-2.5-flash-lite' });
     this.collectionName = config.qdrant.collection;

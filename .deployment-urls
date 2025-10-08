@@ -1,19 +1,19 @@
 # Deployment URLs Reference
 # Fill this in as you complete each deployment step
 
-# Cloud Services
-QDRANT_URL=
-QDRANT_API_KEY=
-ELASTICSEARCH_URL=
+# Cloud Services ✅ COMPLETED
+QDRANT_URL=https://02d153b4-ff39-4b6a-81ee-197ed95dc5b8.us-east4-0.gcp.cloud.qdrant.io:6333
+QDRANT_API_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3MiOiJtIn0.caoWvuwXarTwSdo11Co_zS9nos7AMnheg1bre0pcIFA
+ELASTICSEARCH_URL=https://eddea59763:65a155314dbf10b7f3f4@reachinbox-1hchkj07.us-east-1.bonsaisearch.net
 
-# Deployed Applications
+# Deployed Applications (TODO)
 BACKEND_URL=
 FRONTEND_URL=
 
-# Keep-Awake Service
+# Keep-Awake Service (TODO)
 PING_SERVICE_URL=
 
-# Demo Video
+# Demo Video (TODO)
 DEMO_VIDEO_URL=
 
 # GitHub Repository
