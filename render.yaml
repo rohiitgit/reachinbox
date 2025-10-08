@@ -1,0 +1,47 @@
+services:
+  # Backend API Service
+  - type: web
+    name: reachinbox-backend
+    env: node
+    region: oregon
+    plan: free
+    buildCommand: cd backend && npm install && npm run build
+    startCommand: cd backend && node dist/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: ELASTICSEARCH_URL
+        sync: false
+      - key: QDRANT_URL
+        sync: false
+      - key: IMAP_HOST_1
+        sync: false
+      - key: IMAP_PORT_1
+        value: 993
+      - key: IMAP_USER_1
+        sync: false
+      - key: IMAP_PASSWORD_1
+        sync: false
+      - key: IMAP_TLS_1
+        value: true
+      - key: IMAP_HOST_2
+        sync: false
+      - key: IMAP_PORT_2
+        value: 993
+      - key: IMAP_USER_2
+        sync: false
+      - key: IMAP_PASSWORD_2
+        sync: false
+      - key: IMAP_TLS_2
+        value: true
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: SLACK_WEBHOOK_URL
+        sync: false
+      - key: WEBHOOK_URL
+        sync: false
+      - key: RAG_CONTEXT
+        value: I am applying for a job position. If the lead is interested, share the meeting booking link: https://cal.com/example
+    healthCheckPath: /health

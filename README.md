@@ -447,6 +447,35 @@ docker-compose logs elasticsearch
 4. Verify categorization
 5. Check Slack/webhook notifications
 
+## Deployment
+
+### Free Hosting (100% Free)
+
+Deploy this application for **$0/month** using:
+- **Backend**: Render.com (Free tier)
+- **Frontend**: Vercel (Free tier)
+- **Elasticsearch**: Bonsai (Free 35MB)
+- **Qdrant**: Qdrant Cloud (Free 1GB)
+
+📖 **See [DEPLOYMENT.md](DEPLOYMENT.md)** for complete deployment guide
+✅ **See [DEPLOYMENT_CHECKLIST.md](DEPLOYMENT_CHECKLIST.md)** for step-by-step checklist
+
+### Quick Deploy
+
+```bash
+# Run deployment helper
+./deploy.sh
+
+# Then follow the guide in DEPLOYMENT.md
+```
+
+### Live Demo URLs
+
+Once deployed, add your URLs here:
+- **Frontend**: https://your-app.vercel.app
+- **Backend API**: https://your-app.onrender.com
+- **API Docs**: https://your-app.onrender.com/health
+
 ## Demo Video
 
 [Link to demo video - max 5 minutes]

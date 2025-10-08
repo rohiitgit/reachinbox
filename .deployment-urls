@@ -1,0 +1,23 @@
+# Deployment URLs Reference
+# Fill this in as you complete each deployment step
+
+# Cloud Services
+QDRANT_URL=
+QDRANT_API_KEY=
+ELASTICSEARCH_URL=
+
+# Deployed Applications
+BACKEND_URL=
+FRONTEND_URL=
+
+# Keep-Awake Service
+PING_SERVICE_URL=
+
+# Demo Video
+DEMO_VIDEO_URL=
+
+# GitHub Repository
+GITHUB_REPO_URL=
+
+# Submission Date
+SUBMITTED_ON=

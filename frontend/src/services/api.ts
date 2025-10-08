@@ -1,8 +1,11 @@
 import axios from 'axios';
 import { Email, SearchParams, ApiResponse } from '../types';
 
+// Use environment variable for API URL, fallback to local development
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: `${API_BASE_URL}/api`,
   headers: {
     'Content-Type': 'application/json'
   }

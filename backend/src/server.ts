@@ -17,7 +17,17 @@ class Server {
   }
 
   private configureMiddleware(): void {
-    this.app.use(cors());
+    // Configure CORS for production
+    const corsOptions = {
+      origin: config.nodeEnv === 'production'
+        ? [
+            'https://reachinbox-frontend.vercel.app',
+            /\.vercel\.app$/  // Allow all Vercel preview deployments
+          ]
+        : '*',
+      credentials: true
+    };
+    this.app.use(cors(corsOptions));
     this.app.use(bodyParser.json());
     this.app.use(bodyParser.urlencoded({ extended: true }));
   }
